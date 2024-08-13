@@ -9,6 +9,10 @@ import (
 	starter "github.com/williaminfante/go_test_starter"
 )
 
+
+// Testa a função SayHello para ver se ela cria a mensagem de certinha.
+// A ideia aqui é seguir o TDD, ou seja, primeiro a gente cria o teste e depois
+// ajusta o código para passar nesse teste.
 func TestSayHello(t *testing.T) {
 	greeting := starter.SayHello("William")
 	assert.Equal(t, "Hello William. Welcome!", greeting)
@@ -16,6 +20,10 @@ func TestSayHello(t *testing.T) {
 	assert.Equal(t, "Hello asdf ghjkl. Welcome!", another_greeting)
 }
 
+
+
+// Testa a função OddOrEven para ver se ela identifica números pares e ímpares corretamente.
+// O TDD aqui ajuda a garantir que a função funcione para todos os casos: positivos, negativos e zero.
 func TestOddOrEven(t *testing.T) {
 	t.Run("Check Non Negative Numbers", func(t *testing.T) {
 		assert.Equal(t, "45 is an odd number", starter.OddOrEven(45))
@@ -27,6 +35,11 @@ func TestOddOrEven(t *testing.T) {
 		assert.Equal(t, "-42 is an even number", starter.OddOrEven(-42))
 	})
 }
+
+
+
+// Testa a função Checkhealth para garantir que ela retorna o status de saúde certinho.
+// Esse teste simula uma requisição HTTP para ver se o endpoint está respondendo como deveria.
 
 func TestCheckhealth(t *testing.T) {
 	t.Run("Check health status", func(t *testing.T) {
