@@ -1,61 +1,38 @@
-# Go Test Starter
+Resultado Testes - 
 
-This is the accompanying code repo for the [Golang testing with TDD](https://williaminfante.medium.com/golang-testing-with-tdd-e548d8be776) article.
+```=== RUN   TestSayHello
+--- PASS: TestSayHello (0.00s)
+PASS
+ok      github.com/williaminfante/go_test_starter       (cached)
+Running tool: C:\Program Files\Go\bin\go.exe test -timeout 30s -run ^TestSayHello$ github.com/williaminfante/go_test_starter
 
-
-This repository contains the following:
-
-1. [starter package](starter.go) containg three functions
-2. [starter_test package](starter_test.go) for the related tests
-
-## Table of Contents
-
-- [Go Test Starter](#go-test-starter)
-  - [Table of Contents](#table-of-contents)
-  - [Background](#background)
-  - [Usage](#usage)
-  - [Related Link](#related-link)
-  - [Contributing](#contributing)
-
-## Background
-
-This is the accompanying code repo for the [Golang testing with TDD article](https://williaminfante.medium.com/golang-testing-with-tdd-e548d8wbe776).
-
-We’ll introduce three kinds of functions in our starter package. The aim of these functions is to introduce go testing concepts:
-- `SayHello()` — basics
-- `TestPickAnInteger()` — subtests, refactoring, coverage
-- `TestCheckHealth()` — use of more advanced testing libraries
-
-
-## Usage
-
-This requires a minimum version of Go 1.16 and testify 1.7.0.
-
-You can also just execute:
-```
-go mod tidy
+=== RUN   TestSayHello
+--- PASS: TestSayHello (0.00s)
+PASS
+ok      github.com/williaminfante/go_test_starter       (cached)
 ```
 
-To run tests and optionally add `-v` for verbose:
+
+
 ```
-go test -v
+=== RUN   TestOddOrEven
+=== RUN   TestOddOrEven/Check_Non_Negative_Numbers
+--- PASS: TestOddOrEven/Check_Non_Negative_Numbers (0.00s)
+=== RUN   TestOddOrEven/Check_Negative_Numbers
+--- PASS: TestOddOrEven/Check_Negative_Numbers (0.00s)
+--- PASS: TestOddOrEven (0.00s)
+PASS
+ok      github.com/williaminfante/go_test_starter       0.415s
+Running tool: C:\Program Files\Go\bin\go.exe test -timeout 30s -run ^TestOddOrEven$ github.com/williaminfante/go_test_starter
 ```
 
-To add coverage to the desired output like `coverage.out`, simply:
 ```
-go test -v -coverprofile coverage.out
+=== RUN   TestCheckhealth
+=== RUN   TestCheckhealth/Check_health_status
+--- PASS: TestCheckhealth/Check_health_status (0.00s)
+--- PASS: TestCheckhealth (0.00s)
+PASS
+ok      github.com/williaminfante/go_test_starter       0.397s
+
 ```
 
-To create an html-formatted coverage document:
-```
-go tool cover -html=coverage.out -o coverage.html
-```
-
-## Related Link
-
-Follow-up article on [Golang Testing: Mocking and Error Handling](https://williaminfante.medium.com/golang-testing-mocking-and-error-handling-fbfe7f6008b9)
-
-
-## Contributing
-
-Please don't hesitate to [raise an issue](https://github.com/williaminfante/go_test_starter/issues/new) or submit a PR to improve this project. Thanks!
